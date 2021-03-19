@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace senai_filmes_webAPI.Interfaces
 {
+    // NESTE ARQUIVO(FilmeRepository) terá que adicionar um pacote:
+    // Projeto > Gerenciar Pacotes do NuGet... > Procurar(na aba) > SqlClient > Baixar o primeiro
+
     /// <summary>
     /// Esta é a interface que é responsável pelo repositório GeneroRepository
     /// </summary>

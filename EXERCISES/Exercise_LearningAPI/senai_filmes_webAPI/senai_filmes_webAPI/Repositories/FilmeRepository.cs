@@ -12,9 +12,9 @@ namespace senai_filmes_webAPI.Repositories
     // Projeto > Gerenciar Pacotes do NuGet... > Procurar(na aba) > SqlClient > Baixar o primeiro
 
     /// <summary>
-    /// Classe responsável pelo repositório dos gêneros
+    /// Classe responsável pelo repositório dos filmes
     /// </summary>
-    public class GeneroRepository : IGeneroRepository // os dois pontos(:) é a HERANÇA, pois está herdando a Interface do Genero
+    public class FilmeRepository : IFilmesRepository // os dois pontos(:) é a HERANÇA, pois está herdando a Interface do Filme
     {
         // varíavel privada pra poder se conectar com o SQL Server
         // aqui são todos os parâmetros necessários para se conectar no SQL Server:
@@ -25,22 +25,22 @@ namespace senai_filmes_webAPI.Repositories
         // "pwd" é a senha do usuário, por exemplo, senai@132.
         private string stringConexao = "Data Source=DESKTOP-HMTUR0P; initial catalog=Filmes; user Id=SA; pwd=Soufoda2";
 
-        public void AtualizarIdCorpo(GeneroDomain genero)
+        public void AtualizarIdCorpo(FilmeDomain filme)
         {
             throw new NotImplementedException();
         }
 
-        public void AtualizarIdUrl(int id, GeneroDomain genero)
+        public void AtualizarIdUrl(int id, FilmeDomain filme)
         {
             throw new NotImplementedException();
         }
 
-        public GeneroDomain BuscarPorId(int id)
+        public FilmeDomain BuscarPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Cadastrar(GeneroDomain novoGenero)
+        public void Cadastrar(FilmeDomain novoFilme)
         {
             throw new NotImplementedException();
         }
@@ -51,20 +51,20 @@ namespace senai_filmes_webAPI.Repositories
         }
 
         /// <summary>
-        /// Lista todos os gêneros
+        /// Lista todos os filmes
         /// </summary>
-        /// <returns> Uma lista de gêneros </returns>
-        public List<GeneroDomain> ListarTodos()
+        /// <returns> Uma lista de filmes </returns>
+        public List<FilmeDomain> ListarTodos()
         {
-            // cria uma lista listaGeneros onde serão armazenados os dados
-            List<GeneroDomain> listaGeneros = new List<GeneroDomain>();
+            // cria uma lista listaFilmes onde serão armazenados os dados
+            List<FilmeDomain> listaFilmes = new List<FilmeDomain>();
 
             // declara a SqlConnection "connection" passando a string de conexão(stringConexao) como parâmetro
-            // então o using vai rodar um comando no SQL, por exemplo uma tabela de generos, qnd comunicarmos e trouxer oq queremos do SQL, será cortado a conexão
+            // então o using vai rodar um comando no SQL, por exemplo uma tabela de filmes, qnd comunicarmos e trouxer oq queremos do SQL, será cortado a conexão
             using (SqlConnection connection = new SqlConnection(stringConexao)) // um determinado recurso, aqui será uma conexão || vai rodar um comando no SQL, qnd comunicarmos e trouxer oq quer, será cortado a conexão
             {
                 // declara a instrução(query) a ser executada(ainda não é pra executar, apenas para armazenar o que será pra fazer)
-                string querySelectAll = "SELECT idGenero, Nome FROM Generos";
+                string querySelectAll = "SELECT idFilmes, idGenero, Titulo FROM Filmes";
 
                 // abre a conexão com o banco de dados
                 // invocação da função, seria como se estivesse clicando em "conectar" no SQL, mas ainda não executa nenhum comando
@@ -82,22 +82,24 @@ namespace senai_filmes_webAPI.Repositories
                     // enquanto houver registros para serem lidos no "reader", o laço se repete
                     while (reader.Read()) // a condição para o laço continuar executando é que continue tendo linhas, vai ficar lendo as linhas do SQL, assim que acabar as linhas, para de rodar
                     {
-                        // instancia um objeto genero do tipo GeneroDomain
-                        GeneroDomain genero = new GeneroDomain()
+                        // instancia um objeto filme do tipo FilmeDomain
+                        FilmeDomain filme = new FilmeDomain()
                         {
-                            // atribui à propriedade "idGenero" o valor da primeira[0] coluna do banco de dados
-                            idGenero = Convert.ToInt32(reader[0]), // vai ter o valor do id do genero
+                            // atribui à propriedade "idFilmes" o valor da primeira[0] coluna do banco de dados
+                            idFilme = Convert.ToInt32(reader[0]), // vai ter o valor do id do filme
 
-                            // atribui à propriedade "nome" o valor da segunda[1] coluna do banco de dados
-                            nome = reader[1].ToString()
+                            idGenero = Convert.ToInt32(reader[1]), // atribui à propriedade "idGenero" o valor da segunda[1] coluna do banco de dados
+
+                            // atribui à propriedade "titulo" o valor da terceira[2] coluna do banco de dados
+                            titulo = reader[2].ToString()  
                         };
 
-                        // adiciona o objeto genero criado à lista listaGeneros
-                        listaGeneros.Add(genero);
+                        // adiciona o objeto filme criado à lista listaFilmes
+                        listaFilmes.Add(filme);
                     }
 
-                    // retorna a lista de gêneros
-                    return listaGeneros;
+                    // retorna a lista de filmes
+                    return listaFilmes;
                 }
             }
         }
