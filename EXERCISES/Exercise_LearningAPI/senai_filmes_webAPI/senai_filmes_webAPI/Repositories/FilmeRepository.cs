@@ -29,14 +29,31 @@ namespace senai_filmes_webAPI.Repositories
 
         public void Cadastrar(FilmeDomain novoFilme)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(stringConexao))
+            {
+                string queryInsert = "INSERT INTO Filmes(idGenero, Titulo) VALUES ('"+novoFilme.idGenero+"', '"+novoFilme.titulo+"')";
+
+                using (SqlCommand command = new SqlCommand(queryInsert, connection))
+                {
+                    // abre a conexão com o banco de dados
+                    connection.Open();
+
+                    // executa a query
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
+        /// <summary>
+        /// Deleta um filmes pelo seu id
+        /// </summary>
+        /// <param name="id"> Id do filme será apagado </param>
         public void Deletar(int id)
         {
             using (SqlConnection connection = new SqlConnection(stringConexao))
             {
-                string queryDelete = "DELETE Filmes WHERE Filmes.idFilmes ="+id;
+                // declara a query que será executada tendo o atributo "id" que terá o valor do idFilme que será apagado
+                string queryDelete = "DELETE Filmes WHERE Filmes.idFilmes = "+id;
 
                 using (SqlCommand command = new SqlCommand(queryDelete, connection))
                 {
@@ -53,13 +70,17 @@ namespace senai_filmes_webAPI.Repositories
 
             using (SqlConnection connection = new SqlConnection(stringConexao))
             {
-                string querySelectAll = "SELECT idFilmes, idGenero, Titulo FROM Filmes";
+                // esta query "queryInnerJoin" está selecionando os filmes que tem relação com os gêneros na tabela
+                string queryInnerJoin = "SELECT Filmes.idFilmes, Filmes.Titulo, Generos.idGenero, Generos.Nome FROM Filmes INNER JOIN Generos ON Filmes.idGenero = Generos.idGenero";
+
+                // esta query "querySelectAll" está selecionando TODOS os filmes que existem na tabela
+                /// string querySelectAll = "SELECT idFilmes, idGenero, Titulo FROM Filmes";
 
                 connection.Open();
 
                 SqlDataReader reader;
 
-                using (SqlCommand command = new SqlCommand(querySelectAll, connection))
+                using (SqlCommand command = new SqlCommand(queryInnerJoin, connection))
                 {
                     reader = command.ExecuteReader();
 
@@ -68,8 +89,15 @@ namespace senai_filmes_webAPI.Repositories
                         FilmeDomain filme = new FilmeDomain()
                         {
                             idFilme = Convert.ToInt32(reader[0]),
-                            idGenero = Convert.ToInt32(reader[1]),
-                            titulo = reader[2].ToString()
+                            titulo = reader[1].ToString(),
+                            idGenero = Convert.ToInt32(reader[2]),
+
+                            // instancia um objeto genero do tipo GeneroDomain dentro de Filmes
+                            genero = new GeneroDomain()
+                            {
+                                idGenero = Convert.ToInt32(reader[2]), // vai linkar com o gênero que está na tabela de Filmes(vai referenciar a FK)
+                                nome = reader[3].ToString()
+                            }
                         };
 
                         listaFilmes.Add(filme);

@@ -36,5 +36,15 @@ namespace senai_filmes_webAPI.Controllers
 
             return StatusCode(201);
         }
+
+        // no URL terá que colocar o id do filme que você quer apagar
+        // exemplo: http://localhost:5000/api/filmes/idFilme
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _filmeRepository.Deletar(id);
+
+            return StatusCode(200);
+        }
     }
 }
