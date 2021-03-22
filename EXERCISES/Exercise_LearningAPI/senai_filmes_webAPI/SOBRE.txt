@@ -1,0 +1,3 @@
+Tabela Filmes - Não protegido contra o SQL Injection
+
+Tabela Generos - Protegido contra o SQL Injection
