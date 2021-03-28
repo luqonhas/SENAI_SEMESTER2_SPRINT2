@@ -13,10 +13,10 @@ namespace senai_peoples_webAPI.Repositories
         private string stringConexao = "Data Source=DESKTOP-HMTUR0P; initial catalog=T_Peoples; user Id=SA; pwd=Soufoda2";
 
         /// <summary>
-        /// Atualiza um gênero passando o id pelo recurso (URL)
+        /// Atualiza um funcionário passando o id pelo recurso (URL)
         /// </summary>
-        /// <param name="id"> id do gênero que será atualizado </param>
-        /// <param name="funcionario">  </param>
+        /// <param name="id"> id do funcionário que será atualizado </param>
+        /// <param name="funcionario"> objeto "funcionario" com as novas informações </param>
         public void Atualizar(int id, FuncionarioDomain funcionario)
         {
             using (SqlConnection connection = new SqlConnection(stringConexao))
@@ -92,6 +92,52 @@ namespace senai_peoples_webAPI.Repositories
         }
 
 
+        /// <summary>
+        /// Busca um funcionário através do seu primeiro nome
+        /// </summary>
+        /// <param name="nome"> primeiro nome do funcionário que será buscado </param>
+        /// <returns> retorna um funcionário buscado ou null, caso não seja encontrado </returns>
+        public FuncionarioDomain BuscarPorNome(string nome)
+        {
+            using (SqlConnection connection = new SqlConnection(stringConexao))
+            {
+                string querySearchByName = "SELECT idFuncionario, nome, sobrenome, dataNascimento FROM funcionarios WHERE funcionarios.nome = @nome";
+
+                connection.Open();
+
+                SqlDataReader reader;
+
+                using (SqlCommand command = new SqlCommand(querySearchByName, connection))
+                {
+                    command.Parameters.AddWithValue("@nome", nome);
+
+                    reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        FuncionarioDomain funcionarioBuscado = new FuncionarioDomain
+                        {
+                            idFuncionario = Convert.ToInt32(reader["idFuncionario"]),
+
+                            nome = reader["nome"].ToString(),
+
+                            sobrenome = reader["sobrenome"].ToString(),
+
+                            dataNascimento = Convert.ToDateTime(reader["dataNascimento"])
+                        };
+                        return funcionarioBuscado;
+                    }
+                    else
+                        return null;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Cadastra um novo funcionário
+        /// </summary>
+        /// <param name="novoFuncionario"> informações do novo funcionário </param>
         public void Cadastrar(FuncionarioDomain novoFuncionario)
         {
             using (SqlConnection connection = new SqlConnection(stringConexao))
@@ -188,5 +234,61 @@ namespace senai_peoples_webAPI.Repositories
                 }
             }
         }
+
+
+        /// <summary>
+        /// Lista todos os funcionários ordenadamente
+        /// </summary>
+        /// <param name="ordem"> nome que definirá a ordem dos funcionários </param>
+        /// <returns> Uma lista de funcionários ordenada </returns>
+        public List<FuncionarioDomain> ListarOrdenado(string ordem)
+        {
+            List<FuncionarioDomain> listaFuncionarios = new List<FuncionarioDomain>();
+
+            using (SqlConnection connection = new SqlConnection(stringConexao))
+            {
+                string querySelectAllOrdered;
+
+                if (ordem == "asc")
+                {
+                    querySelectAllOrdered = "SELECT idFuncionario, nome, sobrenome, dataNascimento FROM funcionarios ORDER BY idFuncionario ASC";
+                }
+                else
+                {
+                    querySelectAllOrdered = "SELECT idFuncionario, nome, sobrenome, dataNascimento FROM funcionarios ORDER BY idFuncionario DESC";
+                }
+
+                connection.Open();
+
+                SqlDataReader reader;
+
+                using (SqlCommand command = new SqlCommand(querySelectAllOrdered, connection))
+                {
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        FuncionarioDomain funcionario = new FuncionarioDomain()
+                        {
+                            idFuncionario = Convert.ToInt32(reader["idFuncionario"]),
+
+                            nome = reader["nome"].ToString(),
+
+                            sobrenome = reader["sobrenome"].ToString(),
+
+                            dataNascimento = Convert.ToDateTime(reader["dataNascimento"])
+                        };
+
+                        // adiciona o objeto "funcionario" criado à lista listaFuncionarios
+                        listaFuncionarios.Add(funcionario);
+                    }
+
+                    // retorna a lista de funcionarios
+                    return listaFuncionarios;
+                }
+            }
+        }
+
+
     }
 }

@@ -50,11 +50,48 @@ namespace senai_peoples_webAPI.Controllers
         }
 
 
+        [HttpGet("nomesCompletos")]
+        public IActionResult GetCompleteName()
+        {
+            List<FuncionarioDomain> listaFuncionarios = _funcionarioRepository.Listar(); // aqui apenas é necessário pegar as informações do método "Listar" do repository (não será necessário criar um método)
+
+            if (listaFuncionarios != null) // se listaFuncionarios for diferente de null...
+            {
+                // faz um try catch:
+                try // se a tentativa der certo...
+                {
+                    // junta o nome e o sobrenome em um só atributo (em uma chave) e faz o nome e sobrenome sumir e virar apenas o "nomeCompleto"
+                    List<object> listaNomesCompletos = new List<object>();
+
+                    foreach (var item in listaFuncionarios) // aqui vai ler casa item que existe dentro de "listaFuncionarios"
+                    {
+                        // aqui será possível mudar o nome dos atributos(por exemplo, mudar o "idFuncionario" para apenas "id", mas continuando com as informações certas) e/ou juntar atributos em um só como se estivesse usando um SELECT CONCAT(por exemplo, é possível juntar os atributos "nome" e "sobrenome" em um "nome completo")
+                        object objeto = new { idFuncionario = item.idFuncionario, nomeCompleto = item.nome + ' ' + item.sobrenome, dataNascimento = item.dataNascimento };
+                        listaNomesCompletos.Add(objeto);
+                    }
+                    return Ok(listaNomesCompletos);
+                }
+
+                // caso ocorra algum erro...
+                catch (Exception codErro)
+                {
+                    // retorna um status code 400 - BadRequest e o código do erro
+                    return BadRequest(codErro);
+                }
+            }
+
+            // se a listaFuncionarios for igual null...
+            else
+                // retorna um status code 404 - Not Found com uma mensagem personalizada
+                return NotFound("Nenhum funcionário encontrado!");
+        }
+
+
         /// <summary>
         /// Busca atráves do seu id
         /// </summary>
         /// <param name="id"> id do funcionário que será buscado </param>
-        /// <returns> Um funcionário buscado ou NotFound caso nenhum funcionário seja encontrado </returns>
+        /// <returns> um funcionário buscado ou NotFound caso nenhum funcionário seja encontrado </returns>
         /// http://localhost:5000/api/funcionarios/idFuncionario
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
@@ -66,12 +103,49 @@ namespace senai_peoples_webAPI.Controllers
             // verifica se nenhum funcionário foi encontrado
             if (funcionarioBuscado == null)
             {
-                // caso não seja encontrado, retorna um status code 404 - Not Found com a mensagem personalizada
+                // caso não seja encontrado, retorna um status code 404 - Not Found com uma mensagem personalizada
                 return NotFound("Nenhum funcionário encontrado!");
             }
 
             // caso seja encontrado, retorna o funcionário buscado com um status code 200 - Ok
             return Ok(funcionarioBuscado);
+        }
+
+
+        /// <summary>
+        /// Busca atráves do seu primeiro nome
+        /// </summary>
+        /// <param name="buscado"> primeiro nome do funcionário que será buscado </param>
+        /// <returns> um funcionário buscado ou NotFound caso nenhum funcionário seja encontrado </returns>
+        [HttpGet("buscar/{buscado}")]
+        public IActionResult GetByName(string buscado)
+        {
+            FuncionarioDomain funcionarioBuscado = _funcionarioRepository.BuscarPorNome(buscado);
+
+            if (funcionarioBuscado == null)
+            {
+                return NotFound("Nenhum funcionário encontrado!");
+            }
+            else
+                return Ok(funcionarioBuscado);
+        }
+
+
+        [HttpGet("ordenacao/{ordem}")]
+        public IActionResult GetOrderBy(string ordem)
+        {
+            List<FuncionarioDomain> listaFuncionarios = _funcionarioRepository.ListarOrdenado(ordem);
+
+            // se a ordem solicitada for diferente de ASC ou de DESC...
+            if (ordem != "asc" && ordem != "desc")
+            {
+                // retorna um status code 404 - BadRequest com uma mensagem de erro personalizada
+                return BadRequest("Não foi possível ordenar. Por favor, ordene por 'asc' ou 'desc'");
+            }
+            // mas se a ordem solicitada for ASC ou DESC...
+            else
+                // retorna os funcionários ordenados com um status code 200 - Ok
+                return Ok(listaFuncionarios);
         }
 
 
@@ -86,11 +160,35 @@ namespace senai_peoples_webAPI.Controllers
         [HttpPost]
         public IActionResult Post(FuncionarioDomain novoFuncionario)
         {
-            // faz a chamada para o método Cadastrar
-            _funcionarioRepository.Cadastrar(novoFuncionario);
+            try // tenta executar...
+            {
+                // se o conteúdo do nome e/ou do sobrenome do novo funcionário estar vazio ou com um espaço em branco...
+                if (String.IsNullOrWhiteSpace(novoFuncionario.nome))
+                {
+                    // retorna um status code 404 - Not Found com uma mensagem personalizada
+                    return NotFound("Campo 'nome' obrigatório!");
+                }
+                if (String.IsNullOrWhiteSpace(novoFuncionario.sobrenome))
+                {
+                    // retorna um status code 404 - Not Found com uma mensagem personalizada
+                    return NotFound("Campo 'sobrenome' obrigatório!");
+                }
 
-            // retorna o status code 201 - Created
-            return StatusCode(201);
+                // se estiver tudo preenchido...
+                else
+                    // faz a chamada para o método Cadastrar
+                    _funcionarioRepository.Cadastrar(novoFuncionario);
+
+                    // e retorna o status code 201 - Created
+                    return StatusCode(201);
+            }
+
+            // se não conseguiu executar...
+            catch (Exception codErro)
+            {
+                // retorna um status code 400 - BadRequest e o código do erro
+                return BadRequest(codErro);
+            } 
         }
 
 

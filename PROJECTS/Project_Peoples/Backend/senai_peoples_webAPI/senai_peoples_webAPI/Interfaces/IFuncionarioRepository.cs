@@ -18,6 +18,12 @@ namespace senai_peoples_webAPI.Interfaces
         List<FuncionarioDomain> Listar();
 
         /// <summary>
+        /// Será uma lista de funcionários ordenada
+        /// </summary>
+        /// <returns> Uma lista de funcionários ordenada </returns>
+        List<FuncionarioDomain> ListarOrdenado(string ordem);
+
+        /// <summary>
         /// Será buscado um funcionário pelo seu id
         /// </summary>
         /// <param name="id"> é o id que será buscado </param>
@@ -25,10 +31,12 @@ namespace senai_peoples_webAPI.Interfaces
         FuncionarioDomain BuscarPorId(int id);
 
         /// <summary>
-        /// Será buscado um funcionário pelo seu nome(primeiro nome)
+        /// Será buscado um funcionário pelo seu primeiro nome
         /// </summary>
-        /// <returns> Uma lista de funcionários encontrados com o nome buscado </returns>
-        List<FuncionarioDomain> BuscarPorNome(string nome);
+        /// <param name="nome"> é o nome que será buscado </param>
+        /// <returns> um objeto funcionário que foi buscado </returns>
+        FuncionarioDomain BuscarPorNome(string nome);
+
 
         /// <summary>
         /// Deleta um funcionário existente
