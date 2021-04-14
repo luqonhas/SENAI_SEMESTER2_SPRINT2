@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y1wYCcaaHVRY2JME4A1UCCQBFKmlyVgSW+j+dH+pOgdTWXvmpx6KU1KTXdh2J2j/SoXdWbhGORYBR8jafVNCcA==",
+  "dgSpecHash": "MQAeoNphkpsWip04zVYWvCpdnJ46m0HCvPgJvcNOcV39UEsPF6Mc3arfZDptSnVqSs8Or4X75K6BMt+sQy5LjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\Exercise_LearningAPI\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\Exercise_LearningAPI\\Filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
