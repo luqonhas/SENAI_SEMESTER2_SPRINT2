@@ -58,3 +58,10 @@ C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\obj\Debug\net5.0\ref\senai_filmes_webAPI.dll
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\obj\Debug\net5.0\senai_filmes_webAPI.pdb
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\obj\Debug\net5.0\senai_filmes_webAPI.genruntimeconfig.cache
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

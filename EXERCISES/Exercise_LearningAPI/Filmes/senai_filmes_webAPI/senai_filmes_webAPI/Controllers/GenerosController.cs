@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_filmes_webAPI.Domains;
 using senai_filmes_webAPI.Interfaces;
@@ -44,7 +45,8 @@ namespace senai_filmes_webAPI.Controllers
         /// Lista todos os gêneros
         /// </summary>
         /// <returns> Uma lista de gêneros e um status code </returns>
-        // se você quer listar algo, você usa um GET
+        /// se você quer listar algo, você usa um GET
+        [Authorize] // verifica se o usuário está logado, se não estiver logado, vai ser barrado (o Authorize é uma condição)
         [HttpGet]
         // nosso endpoint em si
         public IActionResult Get() // quem fez a requisição
@@ -63,6 +65,9 @@ namespace senai_filmes_webAPI.Controllers
         /// </summary>
         /// <param name="id"> id do gênero que será buscado </param>
         /// <returns> Um gênero buscado ou NotFound caso nenhum gênero seja encontrado </returns>
+
+        /// somente o usuário administrador pode buscar um gênero pelo id
+        [Authorize(Roles = "administrador")]
         /// http://localhost:5000/api/generos/idGenero
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
