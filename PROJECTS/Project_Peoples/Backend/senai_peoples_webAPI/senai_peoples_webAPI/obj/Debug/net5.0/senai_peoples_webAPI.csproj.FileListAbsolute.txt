@@ -28,3 +28,10 @@ C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_P
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\obj\Debug\net5.0\ref\senai_peoples_webAPI.dll
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\obj\Debug\net5.0\senai_peoples_webAPI.pdb
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\obj\Debug\net5.0\senai_peoples_webAPI.genruntimeconfig.cache
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\PROJECTS\Project_Peoples\Backend\senai_peoples_webAPI\senai_peoples_webAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

@@ -65,3 +65,10 @@ C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\senai_filmes_webAPI.xml
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\obj\Debug\net5.0\senai_filmes_webAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\SENAI\ATVIDADES\SENAI_SEMESTER2_SPRINT2\EXERCISES\Exercise_LearningAPI\Filmes\senai_filmes_webAPI\senai_filmes_webAPI\obj\Debug\net5.0\senai_filmes_webAPI.xml

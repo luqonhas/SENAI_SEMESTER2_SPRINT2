@@ -13,3 +13,17 @@ CREATE TABLE funcionarios(
 	dataNascimento DATE NOT NULL
 );
 GO
+
+CREATE TABLE tipoUsuarios(
+	idTipoUsuario INT PRIMARY KEY IDENTITY,
+	permissao VARCHAR(250) NOT NULL UNIQUE
+);
+GO
+
+CREATE TABLE usuarios(
+	idUsuario INT PRIMARY KEY IDENTITY,
+	idTipoUsuario INT FOREIGN KEY REFERENCES tipoUsuarios(idTipoUsuario),
+	email VARCHAR(250) NOT NULL UNIQUE,
+	senha VARCHAR(250) NOT NULL
+);
+GO

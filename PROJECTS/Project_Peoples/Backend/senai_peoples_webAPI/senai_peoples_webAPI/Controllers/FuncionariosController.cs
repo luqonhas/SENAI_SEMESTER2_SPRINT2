@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_peoples_webAPI.Domains;
 using senai_peoples_webAPI.Interfaces;
@@ -37,6 +38,9 @@ namespace senai_peoples_webAPI.Controllers
         /// Lista todos os funcionários
         /// </summary>
         /// <returns> Uma lista de funcionários e um status code </returns>
+        
+        /// Para que consiga listar todos os funcionários, será necessário estar logado!
+        [Authorize] // verifica se o usuário está logado, caso não esteja, retorna um erro 401
         [HttpGet]
         public IActionResult Get()
         {
@@ -49,7 +53,7 @@ namespace senai_peoples_webAPI.Controllers
             return Ok(listaFuncionarios);
         }
 
-
+        [Authorize(Roles = "1")] // verifica se o usuário está logado com a permissão de Administrador, caso não esteja, retornará um erro
         [HttpGet("nomesCompletos")]
         public IActionResult GetCompleteName()
         {
@@ -92,6 +96,9 @@ namespace senai_peoples_webAPI.Controllers
         /// </summary>
         /// <param name="id"> id do funcionário que será buscado </param>
         /// <returns> um funcionário buscado ou NotFound caso nenhum funcionário seja encontrado </returns>
+
+        /// Para que consiga listar todos os funcionários, será necessário estar logado!
+        [Authorize] // verifica se o usuário está logado, caso não esteja, retorna um erro 401
         /// http://localhost:5000/api/funcionarios/idFuncionario
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
@@ -117,6 +124,9 @@ namespace senai_peoples_webAPI.Controllers
         /// </summary>
         /// <param name="buscado"> primeiro nome do funcionário que será buscado </param>
         /// <returns> um funcionário buscado ou NotFound caso nenhum funcionário seja encontrado </returns>
+
+        /// Para que consiga listar todos os funcionários, será necessário estar logado!
+        [Authorize] // verifica se o usuário está logado, caso não esteja, retorna um erro 401
         [HttpGet("buscar/{buscado}")]
         public IActionResult GetByName(string buscado)
         {
@@ -130,7 +140,8 @@ namespace senai_peoples_webAPI.Controllers
                 return Ok(funcionarioBuscado);
         }
 
-
+        /// Para que consiga listar os funcionários por id, será necessário estar logado com a conta de Administrador!
+        [Authorize(Roles = "1")] // verifica se o usuário está logado com a permissão de Administrador, caso não esteja, retornará um erro
         [HttpGet("ordenacao/{ordem}")]
         public IActionResult GetOrderBy(string ordem)
         {
@@ -156,6 +167,9 @@ namespace senai_peoples_webAPI.Controllers
         /// Cadastra um novo funcionario
         /// </summary>
         /// <returns> Um status code 201 - Created </returns>
+
+        /// Para que consiga listar todos os funcionários, será necessário estar logado!
+        [Authorize] // verifica se o usuário está logado, caso não esteja, retorna um erro 401
         /// exemplo: http://localhost:5000/api/funcionarios
         [HttpPost]
         public IActionResult Post(FuncionarioDomain novoFuncionario)
@@ -201,7 +215,9 @@ namespace senai_peoples_webAPI.Controllers
         /// <param name="id"> id do funcionário que será atualizado </param>
         /// <param name="funcionarioAtualizado"> objeto "funcionarioAtualizado" com as novas informações </param>
         /// <returns> um status code </returns>
-        /// http://localhost:5000/api/funcionarios/idFuncionario
+
+        /// Para que consiga listar todos os funcionários, será necessário estar logado!
+        [Authorize(Roles = "1")] // verifica se o usuário está logado com a permissão de Administrador, caso não esteja, retornará um erro        /// http://localhost:5000/api/funcionarios/idFuncionario
         [HttpPut("{id}")]
         public IActionResult PutIdUrl(int id, FuncionarioDomain funcionarioAtualizado)
         {
@@ -243,6 +259,9 @@ namespace senai_peoples_webAPI.Controllers
         /// </summary>
         /// <param name="id"> id do funcionário que será deletado </param>
         /// <returns> Um status code 204 - No Content </returns>
+
+        /// Para que consiga deletar funcionários do sistema por id, será necessário estar logado com a conta de Administrador!
+        [Authorize(Roles = "1")] // verifica se o usuário está logado com a permissão de Administrador, caso não esteja, retornará um erro
         /// http://localhost:5000/api/funcionarios/idFuncionario
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
