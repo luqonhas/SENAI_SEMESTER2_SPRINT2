@@ -49,7 +49,7 @@ namespace senai.inlock.webAPI.Controllers
                     issuer: "InLock.webAPI",
                     audience: "InLock.webAPI",
                     claims: claims,
-                    expires: DateTime.Now.AddMinutes(1),
+                    expires: DateTime.Now.AddMinutes(10),
                     signingCredentials: credentials
                 );
 
@@ -65,7 +65,7 @@ namespace senai.inlock.webAPI.Controllers
         }
 
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -74,7 +74,7 @@ namespace senai.inlock.webAPI.Controllers
             return Ok(listaUsuarios);
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpPut("{id}")]
         public IActionResult PutIdUrl(int id, UsuarioDomain usuarioAtualizado)
         {
@@ -98,7 +98,7 @@ namespace senai.inlock.webAPI.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -153,7 +153,7 @@ namespace senai.inlock.webAPI.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

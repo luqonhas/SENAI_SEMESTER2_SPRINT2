@@ -178,5 +178,51 @@ namespace senai.inlock.webAPI.Repositories
             return listaEstudios;
         }
 
+        public List<EstudioDomain> ListarEstudiosJogos()
+        {
+            List<EstudioDomain> listaEstudiosJogos = new List<EstudioDomain>();
+
+            using (SqlConnection connection = new SqlConnection(stringConexao))
+            {
+                string querySelectExtra = "SELECT nomeEstudio, idJogo, nomeJogo, descricao, dataLancamento, valor, jogos.idEstudio FROM estudios LEFT JOIN jogos ON estudios.idEstudio = jogos.idEstudio";
+
+                connection.Open();
+
+                SqlDataReader reader;
+
+                using (SqlCommand command = new SqlCommand(querySelectExtra, connection))
+                {
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        EstudioDomain estudioJogo = new EstudioDomain()
+                        {
+                            idEstudio = Convert.ToInt32(reader["idEstudio"]),
+
+                            nomeEstudio = reader["nomeEstudio"].ToString(),
+
+                            jogo = new JogoDomain
+                            {
+                                idJogo = Convert.ToInt32(reader["idJogo"]),
+
+                                nomeJogo = reader["nomeJogo"].ToString(),
+
+                                descricao = reader["descricao"].ToString(),
+
+                                dataLancamento = Convert.ToDateTime(reader["dataLancamento"]),
+
+                                valor = Convert.ToDouble(reader["valor"]),
+
+                                idEstudio = Convert.ToInt32(reader["idEstudio"])
+                            }
+                        };
+
+                        listaEstudiosJogos.Add(estudioJogo);
+                    }
+                }
+            }
+            return listaEstudiosJogos;
+        }
     }
 }

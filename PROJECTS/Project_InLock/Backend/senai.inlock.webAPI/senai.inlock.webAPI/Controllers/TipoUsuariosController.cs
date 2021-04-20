@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.inlock.webAPI.Domains;
 using senai.inlock.webAPI.Interfaces;
@@ -22,7 +23,7 @@ namespace senai.inlock.webAPI.Controllers
             _tipoUsuarioRepository = new TipoUsuarioRepository();
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,7 +32,7 @@ namespace senai.inlock.webAPI.Controllers
             return Ok(listaTipoUsuario);
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {

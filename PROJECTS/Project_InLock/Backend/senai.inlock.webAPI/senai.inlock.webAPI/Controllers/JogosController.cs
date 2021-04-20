@@ -23,7 +23,7 @@ namespace senai.inlock.webAPI.Controllers
             _jogoRepository = new JogoRepository();
         }
 
-        [Authorize(Roles = "Administrador")]
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -32,7 +32,7 @@ namespace senai.inlock.webAPI.Controllers
             return Ok(listaJogos);
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpPut("{id}")]
         public IActionResult PutIdUrl(int id, JogoDomain jogoAtualizado)
         {
@@ -56,7 +56,7 @@ namespace senai.inlock.webAPI.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -75,7 +75,7 @@ namespace senai.inlock.webAPI.Controllers
             return Ok(jogoBuscado);
         }
 
-
+        [Authorize]
         [HttpGet("buscar/{buscado}")]
         public IActionResult GetByName(string buscado)
         {
@@ -89,7 +89,7 @@ namespace senai.inlock.webAPI.Controllers
                 return Ok(jogoBuscado);
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Post(JogoDomain novoJogo)
         {
@@ -127,7 +127,7 @@ namespace senai.inlock.webAPI.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

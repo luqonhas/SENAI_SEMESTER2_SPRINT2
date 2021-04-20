@@ -225,32 +225,6 @@ namespace senai.inlock.webAPI.Repositories
             return listaUsuario;
         }
 
-        public string RoleString(int id)
-        {
-            using (SqlConnection connection = new SqlConnection(stringConexao))
-            {
-                string queryPermissao = "SELECT permissao FROM tipoUsuarios WHERE idTipoUsuario = @id";
-
-                connection.Open();
-
-                SqlDataReader reader;
-
-                using (SqlCommand command = new SqlCommand(queryPermissao, connection))
-                {
-                    command.Parameters.AddWithValue("@id", id);
-
-                    reader = command.ExecuteReader();
-
-                    if (reader.Read())
-                    {
-                        string permissao = reader["permissao"].ToString();
-
-                        return permissao;
-                    }
-                }
-            }
-            return null;
-        }
-
+        
     }
 }

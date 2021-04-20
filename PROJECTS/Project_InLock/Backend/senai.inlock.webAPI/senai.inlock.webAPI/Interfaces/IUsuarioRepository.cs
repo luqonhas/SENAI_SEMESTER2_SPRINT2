@@ -19,7 +19,5 @@ namespace senai.inlock.webAPI.Interfaces
         void Deletar(int id);
 
         UsuarioDomain BuscarEmailSenha(string email, string senha);
-
-        string RoleString(int id);
     }
 }

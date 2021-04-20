@@ -6,7 +6,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace senai.inlock.webAPI
@@ -18,6 +20,19 @@ namespace senai.inlock.webAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // adiciona o serviço do Swagger:
+            // link de onde foram tirados os comandos: https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "InLock.webAPI", Version = "v1" });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
 
             services.AddAuthentication(options =>
             {
@@ -32,9 +47,9 @@ namespace senai.inlock.webAPI
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-chave-autenticacao")),
-                        ClockSkew = TimeSpan.FromMinutes(1),
+                        ClockSkew = TimeSpan.FromMinutes(10),
                         ValidIssuer = "InLock.webAPI",
-                        ValidAudience = "Inlock.webAPI"
+                        ValidAudience = "InLock.webAPI"
                     };
                 });
         }
@@ -48,6 +63,16 @@ namespace senai.inlock.webAPI
             }
 
             app.UseRouting();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "InLock.webAPI");
+            });
 
             app.UseAuthentication();
 

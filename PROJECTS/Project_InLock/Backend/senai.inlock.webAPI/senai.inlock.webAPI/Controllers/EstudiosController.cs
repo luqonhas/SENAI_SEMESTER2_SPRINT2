@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.inlock.webAPI.Domains;
 using senai.inlock.webAPI.Interfaces;
@@ -22,7 +23,7 @@ namespace senai.inlock.webAPI.Controllers
             _estudioRepository = new EstudioRepository();
         }
 
-
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,7 +32,15 @@ namespace senai.inlock.webAPI.Controllers
             return Ok(listaEstudios);
         }
 
+        [HttpGet("extra")]
+        public IActionResult GetExtra()
+        {
+            List<EstudioDomain> listaEstudiosJogos = _estudioRepository.ListarEstudiosJogos();
 
+            return Ok(listaEstudiosJogos);
+        }
+
+        [Authorize(Roles = "Administrador")]
         [HttpPut("{id}")]
         public IActionResult PutIdUrl(int id, EstudioDomain estudioAtualizado)
         {
@@ -55,7 +64,7 @@ namespace senai.inlock.webAPI.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -74,7 +83,7 @@ namespace senai.inlock.webAPI.Controllers
             return Ok(estudioBuscado);
         }
 
-
+        [Authorize]
         [HttpGet("buscar/{buscado}")]
         public IActionResult GetByName(string buscado)
         {
@@ -88,7 +97,7 @@ namespace senai.inlock.webAPI.Controllers
                 return Ok(estudioBuscado);
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Post(EstudioDomain novoEstudio)
         {
@@ -118,7 +127,7 @@ namespace senai.inlock.webAPI.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
