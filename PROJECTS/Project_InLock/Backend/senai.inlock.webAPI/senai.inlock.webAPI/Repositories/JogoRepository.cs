@@ -41,7 +41,7 @@ namespace senai.inlock.webAPI.Repositories
         {
             using (SqlConnection connection = new SqlConnection(stringConexao))
             {
-                string querySearchById = "SELECT idJogo, nomeJogo, descricao, dataLancamento, valor, jogos.idEstudio, estudios.nomeEstudio FROM jogos INNER JOIN estudios ON jogos.idEstudio = estudios.idEstudio WHERE jogos.idJogo = @id";
+                string querySearchById = "SELECT idJogo, nomeJogo, descricao, dataLancamento, valor, jogos.idEstudio, estudios.idEstudio, estudios.nomeEstudio FROM jogos INNER JOIN estudios ON jogos.idEstudio = estudios.idEstudio WHERE jogos.idJogo = @id";
 
                 connection.Open();
 
@@ -231,5 +231,56 @@ namespace senai.inlock.webAPI.Repositories
             }
             return listaJogos;
         }
+
+
+        public List<JogoDomain> ListarJogos(int id)
+        {
+            List<JogoDomain> listaJogos = new List<JogoDomain>();
+
+            using (SqlConnection connection = new SqlConnection(stringConexao))
+            {
+                string querySelectGames = "SELECT idJogo, nomeJogo, descricao, dataLancamento, valor, jogos.idEstudio, estudios.idEstudio, nomeEstudio FROM jogos INNER JOIN estudios ON jogos.idEstudio = estudios.idEstudio WHERE jogos.idEstudio = @id";
+
+                using (SqlCommand command = new SqlCommand(querySelectGames, connection))
+                {
+                    connection.Open();
+
+                    command.Parameters.AddWithValue("@id", id);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        JogoDomain jogo = new JogoDomain
+                        {
+                            idJogo = Convert.ToInt32(reader["idJogo"]),
+
+                            nomeJogo = reader["nomeJogo"].ToString(),
+
+                            descricao = reader["descricao"].ToString(),
+
+                            dataLancamento = Convert.ToDateTime(reader["dataLancamento"]),
+
+                            valor = Convert.ToDouble(reader["valor"]),
+
+                            idEstudio = Convert.ToInt32(reader["idEstudio"]),
+
+                            estudio = new EstudioDomain
+                            {
+                                idEstudio = Convert.ToInt32(reader["idEstudio"]),
+
+                                nomeEstudio = reader["nomeEstudio"].ToString()
+                            }
+                        };
+
+                        listaJogos.Add(jogo);
+                    }
+                }
+            }
+
+            return listaJogos;
+        }
+
+
     }
 }

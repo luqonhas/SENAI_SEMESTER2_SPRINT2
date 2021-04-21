@@ -18,9 +18,12 @@ namespace senai.inlock.webAPI.Controllers
     {
         private IEstudioRepository _estudioRepository { get; set; }
 
+        private IJogoRepository _jogoRepository { get; set; }
+
         public EstudiosController()
         {
             _estudioRepository = new EstudioRepository();
+            _jogoRepository = new JogoRepository();
         }
 
         [Authorize]
@@ -35,9 +38,30 @@ namespace senai.inlock.webAPI.Controllers
         [HttpGet("extra")]
         public IActionResult GetExtra()
         {
-            List<EstudioDomain> listaEstudiosJogos = _estudioRepository.ListarEstudiosJogos();
+            // lista com o método do Listar do repositório dos Estúdios
+            List<EstudioDomain> listaEstudiosJogos = _estudioRepository.Listar();
 
-            return Ok(listaEstudiosJogos);
+            // lista objeto vazia
+            List<object> listaObject = new List<object>();
+
+            // o foreach vai executar um estúdio de cada vez
+            // vai executar os itens do EstudioDomain que estão na listaEstudiosJogos (a lista de ListarTodos no EstudioRepository)
+            // por exemplo, o foreach vai pegar um estúdio de cada vez e o primeiro estúdio por exemplo será a Blizzard
+            foreach (EstudioDomain item in listaEstudiosJogos)
+            {
+                // uma lista com o JogoDomain(jogos) que vai conter um método de listar os jogos por id(ListarJogos(int id)) que foi criado para esse extra, dentro dos argumentos desse ListarJogos será necessário colocar o id do Estudio que foi colocado na query do método(WHERE jogos.idEstudio = @id)
+                List<JogoDomain> jogos = _jogoRepository.ListarJogos(item.idEstudio);
+
+                // é criado um objeto "obj" que irá juntar os atributos(idEstudio e nomeEstudio), onde será colocado os itens da EstudioDomain da listaEstudiosJogos, e será juntado com a lista do JogoDomain(jogos) que foi criada acima
+                // no object "obj", será colocado os itens id do estúdio(1) e o seu nome(Blizzard), e também será adicionada a lista "jogos" que contém os jogos que foram feitos pela Blizzard
+                object obj = new { item.idEstudio, item.nomeEstudio, jogos };
+
+                // aqui será adicionada dentro da lista vazia que foi criada no começo esse objeto "obj" que contém as duas listas(com o idEstudio e nomeEstudio de EstudioDomain e a lista "jogos" com o método ListarJogos)
+                listaObject.Add(obj);
+            }
+            
+            // aqui retornará a lista com tudo que foi pedido no extra
+            return Ok(listaObject);
         }
 
         [Authorize(Roles = "Administrador")]

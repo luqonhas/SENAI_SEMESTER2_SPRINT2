@@ -19,5 +19,7 @@ namespace senai.inlock.webAPI.Interfaces
         void Deletar(int id);
 
         JogoDomain BuscarPorNome(string nome);
+
+        List<JogoDomain> ListarJogos(int id);
     }
 }
