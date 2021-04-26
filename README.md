@@ -1,4 +1,4 @@
-  <h2 align="center">Database</h2>
+  <h2 align="center">BACK-END</h2>
 
   <p align="center">
     Repository that has all the projects and exercises <br>performed on SPRINT 2 from BACK-END! 🎲
@@ -24,6 +24,8 @@ Be directed to the exercises or projects folder.
 <br />
 <a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2/tree/main/PROJECTS"><strong> View Projects
 »</strong></a>
+<br>
+<br>
 
 ## Repository Map 🗺️
 
@@ -33,7 +35,7 @@ Be directed to the exercises or projects folder.
 <br>
 <div id='about'/>
 
-## About the Project 🔍
+## About the Repository 🔍
 This repository has all the exercises and projects performed by @luqonhas on SPRINT 2 of BACK-END of the SYSTEMS DEVELOPMENT course at Escola SENAI de Informática.
 
 The studies in this repository started on <ins>**03/15/2021**</ins> and have not yet been finalized.
