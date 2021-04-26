@@ -1,7 +1,7 @@
   <h2 align="center">BACK-END</h2>
 
   <p align="center">
-    Repository that has all the projects and exercises <br>performed on SPRINT 2 from BACK-END! 🎲
+    Repository that has all the projects and exercises <br>performed on SPRINT 2 from BACK-END! 🔙
     <br />
     <a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2"><strong> View Repository
     »</strong></a>
