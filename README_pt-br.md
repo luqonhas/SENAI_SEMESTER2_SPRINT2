@@ -1,7 +1,7 @@
   <h2 align="center">BACK-END</h2>
 
   <p align="center">
-    Repositório que possui todos os projetos e exercícios <br>realizados na SPRINT 2 de BACK-END! 🎲
+    Repositório que possui todos os projetos e exercícios <br>realizados na SPRINT 2 de BACK-END! 🔙
     <br />
     <a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2"><strong> Ver Repositório
     »</strong></a>
