@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst.csproj": {}
+    "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\Exercise_CreatingAutomaticDomain\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst.csproj": {
+    "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\Exercise_CreatingAutomaticDomain\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\Exercise_CreatingAutomaticDomain\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst.csproj",
         "projectName": "senai_inlock_webAPI_DBFirst",
-        "projectPath": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\Exercise_CreatingAutomaticDomain\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\SENAI\\ATVIDADES\\SENAI_SEMESTER2_SPRINT2\\EXERCISES\\Exercise_CreatingAutomaticDomain\\senai_inlock_webAPI_DBFirst\\senai_inlock_webAPI_DBFirst\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.5, )"
