@@ -58,11 +58,11 @@ Here are all the technologies (both programs used, as well as methods and good p
 <br>
 
 * _**BANCO DE DADOS**_ 🎲
-* **<ins>Microsoft SQL Server**</ins> : Relational database management system (DBMS);
-* **<ins>SQL Server Management Studio**</ins> : Software used to connect to the SQL type (SSMS);
-* **<ins>DDL**</ins> : Data Definition Language that is used to create, modify and remove tables in the Database;
-* **<ins>DML**</ins> : Data Manipulation Language that is used to insert, update and delete tables and information in the Database;
-* **<ins>DQL**</ins> : Data Query Language that is used to select tables in the Database;
+  * **<ins>Microsoft SQL Server**</ins> : Relational database management system (DBMS);
+  * **<ins>SQL Server Management Studio**</ins> : Software used to connect to the SQL type (SSMS);
+  * **<ins>DDL**</ins> : Data Definition Language that is used to create, modify and remove tables in the Database;
+  * **<ins>DML**</ins> : Data Manipulation Language that is used to insert, update and delete tables and information in the Database;
+  * **<ins>DQL**</ins> : Data Query Language that is used to select tables in the Database;
 <br>
 <div id="contact"/>
 
