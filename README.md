@@ -1,7 +1,7 @@
-  <h2 align="center">BACK-END</h2>
+  <h2 align="center">API - BACK-END</h2>
 
   <p align="center">
-    Repository that has all the projects and exercises <br>performed on SPRINT 2 from BACK-END! 🔙
+    Repository that has all the projects and exercises <br>performed on SPRINT 2 from API! 🔙
     <br />
     <a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API"><strong> View Repository
     »</strong></a>
@@ -36,7 +36,7 @@ Be directed to the exercises or projects folder.
 <div id='about'/>
 
 ## About the Repository 🔍
-This repository has all the exercises and projects performed by @luqonhas on SPRINT 2 of BACK-END of the SYSTEMS DEVELOPMENT course at Escola SENAI de Informática.
+This repository has all the exercises and projects performed by @luqonhas on SPRINT 2 of API of the SYSTEMS DEVELOPMENT course at Escola SENAI de Informática.
 
 The studies in this repository started on <ins>**03/15/2021**</ins> and have not yet been finalized.
 <br>
@@ -45,7 +45,7 @@ The studies in this repository started on <ins>**03/15/2021**</ins> and have not
 <div id = "tec"/>
 
 ## Learned Technologies 🤖
-Here are all the technologies (both programs used, as well as methods and good practices) that were learned throughout SPRINT 2 of BACK-END.
+Here are all the technologies (both programs used, as well as methods and good practices) that were learned throughout SPRINT 2 of API.
 
 * _**BACK-END**_ 🔙
   * **<ins>Microsoft Visual Studio**</ins> : Integrated development environment (IDE);
@@ -55,9 +55,11 @@ Here are all the technologies (both programs used, as well as methods and good p
   * **<ins>Postman**</ins> : Tool that supports the documentation of requests made by the API;
   * **<ins>Token Generation (JWT)**</ins> : Generation of tokens to create validations and authorizations;
   * **<ins>Swagger**</ins> : Interface description language to describe RESTful APIs expressed using JSON.
+  * **<ins>Database First**</ins> : Generates the context and entities in the BACK-END via the DATABASE.
+  * **<ins>Code First**</ins> : Generates the tables and inserts information into them in the DATABASE via the BACK-END.
 <br>
 
-* _**BANCO DE DADOS**_ 🎲
+* _**DATABASE**_ 🎲
   * **<ins>Microsoft SQL Server**</ins> : Relational database management system (DBMS);
   * **<ins>SQL Server Management Studio**</ins> : Software used to connect to the SQL type (SSMS);
   * **<ins>DDL**</ins> : Data Definition Language that is used to create, modify and remove tables in the Database;
