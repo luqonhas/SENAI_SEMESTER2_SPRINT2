@@ -1,7 +1,7 @@
-  <h2 align="center">BACK-END</h2>
+  <h2 align="center">API - BACK-END</h2>
 
   <p align="center">
-    Repositório que possui todos os projetos e exercícios <br>realizados na SPRINT 2 de BACK-END! 🔙
+    Repositório que possui todos os projetos e exercícios <br>realizados na SPRINT 2 de API! 🔙
     <br />
     <a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2"><strong> Ver Repositório
     »</strong></a>
@@ -36,7 +36,7 @@ Seja direcionado para a pasta de exercícios ou de projetos.
 <div id='about'/>
 
 ## Sobre o Repositório 🔍
-Nesse repositório possui todos os exercícios e projetos realizados pelo @luqonhas na SPRINT 2 de BACK-END do curso de DESENVOLVIMENTO DE SISTEMAS na Escola SENAI de Informática.
+Nesse repositório possui todos os exercícios e projetos realizados pelo @luqonhas na SPRINT 2 de API do curso de DESENVOLVIMENTO DE SISTEMAS na Escola SENAI de Informática.
 
 Os estudos que estão neste repositório foram iniciados em <ins>**15/03/2021**</ins> e ainda não foram finalizados.
 <br>
@@ -46,7 +46,7 @@ Os estudos que estão neste repositório foram iniciados em <ins>**15/03/2021**<
 <div id = "tec"/>
 
 ## Tecnologias Aprendidas 🤖
-Aqui são todas as tecnologias (tanto programas utilizados, quanto métodos e boas práticas) que foram aprendidas durante toda SPRINT 2 de BACK-END.
+Aqui são todas as tecnologias (tanto programas utilizados, quanto métodos e boas práticas) que foram aprendidas durante toda SPRINT 2 de API.
 
 * _**BACK-END**_ 🔙
   * **<ins>Visual Studio**</ins> : Ambiente de desenvolvimento integrado (IDE);
@@ -56,6 +56,8 @@ Aqui são todas as tecnologias (tanto programas utilizados, quanto métodos e bo
   * **<ins>Postman**</ins> : Ferramenta que dá suporte à documentação das requisições feitas pela API;
   * **<ins>Geração de Tokens (JWT)**</ins> : Geração de tokens para criar validações e autorizações;
   * **<ins>Swagger**</ins> : Linguagem de descrição de interface para descrever APIs RESTful expressas usando JSON.
+  * **<ins>BD First**</ins> : Gera o contexto e entidades no BACK-END via DATABASE.
+  * **<ins>Code First**</ins> : Gera as tabelas e insere informações nelas no DATABASE via BACK-END.
 <br>
 
 * _**BANCO DE DADOS**_ 🎲
