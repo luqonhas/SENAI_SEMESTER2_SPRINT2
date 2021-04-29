@@ -3,7 +3,7 @@
   <p align="center">
     Repository that has all the projects and exercises <br>performed on SPRINT 2 from BACK-END! 🔙
     <br />
-    <a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2"><strong> View Repository
+    <a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API"><strong> View Repository
     »</strong></a>
     <br />
     <br />
@@ -12,17 +12,17 @@
 </p>
 
 ## Translations 👅
-**Portuguese** version available [here](https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2/blob/master/README_pt-br.md).
+**Portuguese** version available [here](https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/blob/master/README_pt-br.md).
 <br>
 <br>
 
 ## Knowledge 📚
 Be directed to the exercises or projects folder.
 <br />
-<a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2/tree/main/EXERCISES"><strong> View Exercises
+<a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/tree/main/EXERCISES"><strong> View Exercises
 »</strong></a>
 <br />
-<a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2/tree/main/PROJECTS"><strong> View Projects
+<a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/tree/main/PROJECTS"><strong> View Projects
 »</strong></a>
 <br>
 <br>
