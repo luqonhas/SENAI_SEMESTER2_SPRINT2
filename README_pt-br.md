@@ -12,17 +12,17 @@
 </p>
 
 ## Traduções 👅
-Versão em **Inglês** disponível [aqui](https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2/blob/master/README.md).
+Versão em **Inglês** disponível [aqui](https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/blob/master/README.md).
 <br>
 <br>
 
 ## Conhecimentos 📚
 Seja direcionado para a pasta de exercícios ou de projetos.
 <br />
-<a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2/tree/main/EXERCISES"><strong> Ver Exercícios
+<a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/tree/main/EXERCISES"><strong> Ver Exercícios
 »</strong></a>
 <br />
-<a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2/tree/main/PROJECTS"><strong> Ver Projetos
+<a href="https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/tree/main/PROJECTS"><strong> Ver Projetos
 »</strong></a>
 <br>
 <br>
