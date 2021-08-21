@@ -12,7 +12,7 @@
 </p>
 
 ## Translations 👅
-**Portuguese** version available [here](https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/blob/master/README_pt-br.md).
+**Portuguese** version available [here](https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/blob/master/README.md).
 <br>
 <br>
 
