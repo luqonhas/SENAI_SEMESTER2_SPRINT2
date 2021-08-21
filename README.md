@@ -12,7 +12,7 @@
 </p>
 
 ## Traduções 👅
-Versão em **Inglês** disponível [aqui](https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/blob/master/README.md).
+Versão em **Inglês** disponível [aqui](https://github.com/luqonhas/SENAI_SEMESTER2_SPRINT2_API/blob/master/README_en-us.md).
 <br>
 <br>
 
